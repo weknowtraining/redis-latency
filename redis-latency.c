@@ -29,6 +29,7 @@ int main(int argc, char **argv) {
         freeReplyObject(reply);
         latency = mstime() - start;
         printf("%lld\n", latency);
+        fflush(stdout);
         usleep(500000); // 500 ms
     }
 
