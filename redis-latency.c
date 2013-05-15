@@ -18,8 +18,13 @@ static long long mstime(void) {
 int main(int argc, char **argv) {
     long long start, latency;
 
+    char * host = "192.168.2.181";
+    if (argc > 1) {
+        host = argv[1];
+    }
+
     redisReply *reply = NULL;
-    redisContext *c = redisConnect("127.0.0.1", 6379);
+    redisContext *c = redisConnect(host, 6379);
     check(c, "Failed to connect");
 
     while(1) {
